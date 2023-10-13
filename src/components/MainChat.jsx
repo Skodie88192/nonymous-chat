@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import Menu from "./Menu";
 import Input from "./Input";
 import Messages from "./Messages";
-import style from "../styles/layout.module.scss";
+import style from "../styles/layout.module.css";
 import { db, analytics, logEventFun } from "../firebase";
 // import { ref, set, push } from "firebase/database";
 import "firebase/analytics";
 import { setUserId } from "firebase/analytics";
 import { v4 as uuidv4 } from "uuid";
 import { SignUp } from "./SignUp";
-import { ref, onValue, query, orderByChild, limitToLast } from "firebase/database";
+import { ref, onValue } from "firebase/database";
 
 function MainChat() {
     const [state, setState] = useState({
@@ -18,7 +18,6 @@ function MainChat() {
     const [userState, setUserState] = useState({ user: {}, hasUser: false });
     const [messages, setMessages] = useState([]);
     const [reply, setReply] = useState(null);
-    const MessageListRef = query(ref(db, "messages"), limitToLast(100));
 
     const removeUser = () => {
         setUserState({
@@ -41,16 +40,8 @@ function MainChat() {
         getMessages(user);
     };
 
-    useEffect(() => {
-        console.log(analytics && true);
-        //check if userdata is in localstorage
-        if (JSON.parse(localStorage.getItem("user"))?.name) {
-            setUserState({ user: JSON.parse(localStorage.getItem("user")), hasUser: true });
-            getMessages(JSON.parse(localStorage.getItem("user")));
-        }
-    }, []);
-
     const getMessages = () => {
+        const MessageListRef = ref(db, "messages/");
         onValue(MessageListRef, (snapshot) => {
             let messagesObj = snapshot.val();
             let messagesQuery = Object.entries(snapshot.val()).map((mess) => {
@@ -78,6 +69,16 @@ function MainChat() {
             setState({ ...state, isLoading: false });
         });
     };
+
+    useEffect(() => {
+        // console.log(analytics && true);
+        //check if userdata is in localstorage
+        if (JSON.parse(localStorage.getItem("user"))?.name) {
+            setUserState({ user: JSON.parse(localStorage.getItem("user")), hasUser: true });
+            getMessages();
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     if (!userState.hasUser) {
         const onSubmit = (e) => {

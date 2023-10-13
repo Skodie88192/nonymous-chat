@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import MessageCard from "../MessageCard";
-import styles from "./styles.module.scss";
+import styles from "./styles.module.css";
 
 import Loader from "../Loader";
 

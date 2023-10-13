@@ -1,0 +1,118 @@
+.chat {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+	justify-content: center;
+  }
+  .chat .messages {
+	height: 80%;
+	overflow: auto;
+	background-color: rgba(0, 255, 255, 0.4);
+	width: 100%;
+	position: absolute;
+	bottom: 4rem;
+	font-size: 1.001rem;
+  }
+  .chat .messages button {
+	position: fixed;
+	right: 1.5rem;
+	top: 1.5rem;
+	height: 2rem;
+	width: 2rem;
+	border-radius: 50%;
+	padding: auto;
+  }
+  .chat .messages button span {
+	display: block;
+	height: 0.6rem;
+	width: 0.6rem;
+	border: 0;
+	border-bottom: 1px #000 solid;
+	border-right: 1px #000 solid;
+	transform: rotate(45deg);
+  }
+  .chat .inputBar {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0px;
+	position: fixed;
+	bottom: 0;
+	height: auto;
+  }
+  .chat form {
+	display: flex;
+	justify-content: space-evenly;
+	border-radius: 1em;
+	background-color: rgba(0, 0, 0, 0.1);
+	width: 100%;
+	height: 90%;
+	padding: 1rem 0.5rem;
+	max-width: 40rem;
+	box-shadow: 1px 2px 1rem rgba(0, 0, 0, 0.3);
+  }
+  .chat form:hover, .chat form:focus {
+	background-color: rgba(0, 0, 0, 0.3);
+  }
+  .chat input {
+	width: 100%;
+	height: 1.5rem;
+	border: 0;
+	background-color: transparent;
+	border-bottom: 1px rgba(0, 0, 0, 0.5) solid;
+	outline: 0;
+  }
+  .chat input::placeholder {
+	margin: 0.2rem;
+	color: rgba(0, 0, 0, 0.5);
+  }
+  .chat input:hover {
+	border-bottom: 1px black solid;
+  }
+  .chat input:hover::placeholder {
+	color: black;
+  }
+  .chat input:focus {
+	border-bottom: 1px blue solid;
+  }
+  .chat input:focus::placeholder {
+	color: blue;
+  }
+  .chat .input {
+	display: flex;
+	flex-direction: column;
+	margin: 0.5rem;
+  }
+  .chat .input span {
+	color: red;
+  }
+  .chat button {
+	background-color: transparent;
+	border-radius: 0.2rem;
+	padding: 0px 0.6rem;
+	margin: 0 0.5rem;
+	border: 0;
+	box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.3);
+  }
+  .chat button:hover, .chat button:focus {
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  }
+  .message-card {
+	border-radius: 0.5rem;
+	word-wrap: break-word;
+	max-width: 80vw;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+  }
+  .message-card .message-user {
+	padding: 0.3rem;
+	background-color: rgba(0, 0, 0, 0.1);
+	margin: 0px;
+	height: 1rem;
+	width: 100%;
+	text-transform: capitalize;
+  }
+  

@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
-import style from "./styles.module.scss";
+import style from "./styles.module.css";
 
 function Input({ name, removeUser }) {
     const [active, setActive] = useState(false);
@@ -17,16 +17,18 @@ function Input({ name, removeUser }) {
                     </button>
                     <menu className={style.options}>
                         <div className={style.user}>
-                            <h3>{name}</h3>
-                            <a onClick={removeUser} className={style.update}>
-                                change username
-                            </a>
+                            <h3 className={style.name}>{name}</h3>
+                            <i className="fa fa-user-circle fa-lg" aria-hidden="true"></i>
+
                         </div>
-                        <p style={{ fontSize: ".5rem", marginTop: "0.5rem" }}>
-                            built by{" "}
-                            <a href="http://paakofiaidoo.tech">
-                                paa-kofi aidoo
+                        <div className={style.logout}>
+                            <a onClick={removeUser} className={style.update}>
+                                Logout
                             </a>
+                            <i className="fa fa-sign-out fa-lg" aria-hidden="true"></i>
+                        </div>
+                        <p style={{ fontSize: ".65rem", marginTop: "0.5rem", fontStyle: "italic" }}>
+                            Built by Samuel Kodie
                         </p>
                     </menu>
                 </>

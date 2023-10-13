@@ -1,0 +1,90 @@
+.layout {
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+  }
+  .layout .head {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    background: #fff;
+    width: 100%;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }
+  .container input {
+    position: relative;
+    width: 100%;
+    height: 3rem;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.6;
+    letter-spacing: 0.1rem;
+    cursor: text;
+    border-bottom: 1px solid #000;
+  }
+  .container input:focus {
+    outline: none;
+    border-bottom: 1px solid #fff;
+  }
+  .container input::placeholder {
+    color: #888;
+  }
+  .container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .container button {
+    margin: 1rem;
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  }
+  .container button:hover {
+    border: 1px solid white;
+  }
+  .container button:active {
+    box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+  }
+  /* From cssbuttons.io by @addy123d */
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    background: #f1f5f3;
+    box-shadow: 1px 5px 60px 0px #4646466b;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .card * {
+    font-weight: 500;
+  }
+  .card .picture:hover, button:hover {
+    background: #252525;
+    color: #f1f5f3;
+  }
+  

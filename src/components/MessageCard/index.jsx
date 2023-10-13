@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import styles from "./styles.module.scss";
+import React from "react";
+import styles from "./styles.module.css";
 
 function MessageCard({ content, date, user, me, reply, setReply, id, setCurrentID, currentID }) {
     let time = new Date(date);
@@ -36,7 +36,7 @@ function MessageCard({ content, date, user, me, reply, setReply, id, setCurrentI
                     <h3 className={styles.username}>{user?.name}</h3>
                     <span className={styles.time}>{date}</span>
                 </div>
-                <p className={styles.content}>
+                <span className={styles.content}>
                     {!!reply && (
                         <a
                             href={`#${reply.id}`}
@@ -52,7 +52,7 @@ function MessageCard({ content, date, user, me, reply, setReply, id, setCurrentI
                         </a>
                     )}
                     {content}
-                </p>
+                </span>
             </div>
             <img
                 src="/reply.svg"

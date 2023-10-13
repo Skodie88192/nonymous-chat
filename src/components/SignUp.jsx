@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../styles/layout.module.scss";
+import style from "../styles/layout.module.css";
 
 export function SignUp({ onSubmit }) {
     return (

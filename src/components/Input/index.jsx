@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import style from "./styles.module.scss";
+import style from "./styles.module.css";
 import { db, logEventFun } from "../../firebase";
 import { ref, set, push } from "firebase/database";
 
@@ -89,7 +89,7 @@ function Input({ user, setReply, reply }) {
                     </spam>
                 )}
             </div>
-            <button type="submit" disabled={message.length > limit || message.length === 0 ? "true" : null} onClick={send} className={style.send}>
+            <button type="submit" disabled={message.length > limit || message.length === 0 ? true : false} onClick={send} className={style.send}>
                 <div className={style.svgWrapper}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                         <path fill="none" d="M0 0h24v24H0z"></path>

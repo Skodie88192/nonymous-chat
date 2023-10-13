@@ -1,0 +1,100 @@
+.menu {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    /* width: 5rem; */
+    height: 100%;
+    z-index: 3;
+}
+
+.menu .options {
+    top: 0;
+    flex-direction: column;
+    width: max-content;
+    background-color: white;
+    border-color: grey;
+    border-style: solid;
+    border-width: 0.1rem;
+    border-radius: 0.5rem;
+    position: absolute;
+    margin-top: 3rem;
+    margin-right: 0.2rem;
+    display: flex;
+    height: max-content;
+    padding: 1rem;
+    font-size: 1.2rem;
+    box-shadow: 0.5rem 0.5rem 0.5rem rgb(114, 111, 111);
+    z-index: 10;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.menu .options .user {
+    flex-direction: row;
+    background-color: transparent;
+    align-items: center;
+    margin-bottom: 0.7rem;
+    color: #09ac0c;
+    align-items: center;
+}
+
+.menu .options .logout {
+    flex-direction: row;
+    background-color: transparent;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    color: #f05252
+}
+
+.menu .options .user .name {
+    background-color: transparent;
+    margin-right: 0.4rem;
+    color: black;
+}
+
+.menu .options .update {
+    font-size: 0.9rem;
+    margin-right: 0.4rem;
+    /* color: #00f; */
+    cursor: pointer;
+}
+
+.menu .icon {
+    background-color: transparent;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.menu .icon:hover {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes fly-1 {
+    from {
+        transform: translateY(0.1rem);
+    }
+
+    to {
+        transform: translateY(-0.1rem);
+    }
+}
+
+.c_red {
+    color: #f05252;
+}
+
+.c_blue {
+    color: #52b4f0;
+}
+
+.c_yellow {
+    color: #f4ee6a;
+}
+
+.c_green {
+    color: #6af46c;
+}
